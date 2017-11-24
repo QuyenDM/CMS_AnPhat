@@ -113,6 +113,7 @@ public class ManageCustomerStatusView extends CommonOnePanelUI implements View {
         } catch (Exception e) {
             mapCustServiceStatus = new HashMap();
         }
+        
         cbxStaff = CommonUtils.buildComboBox("Nhân viên");
         cbxStaff.setRequired(true);
 
