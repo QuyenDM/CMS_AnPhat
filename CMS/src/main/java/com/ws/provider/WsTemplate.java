@@ -1,0 +1,37 @@
+package com.ws.provider;
+
+import javax.xml.soap.SOAPMessage;
+import java.util.List;
+
+/**
+ * Created by thiendn1 on 1/19/2015.
+ */
+public class WsTemplate {
+    String soapMessage;
+    List<String> headerList;
+    List<String> aliasList;
+
+    public String getSoapMessage() {
+        return soapMessage;
+    }
+
+    public void setSoapMessage(String soapMessage) {
+        this.soapMessage = soapMessage;
+    }
+
+    public List<String> getAliasList() {
+        return aliasList;
+    }
+
+    public void setAliasList(List<String> aliasList) {
+        this.aliasList = aliasList;
+    }
+
+    public List<String> getHeaderList() {
+        return headerList;
+    }
+
+    public void setHeaderList(List<String> headerList) {
+        this.headerList = headerList;
+    }
+}

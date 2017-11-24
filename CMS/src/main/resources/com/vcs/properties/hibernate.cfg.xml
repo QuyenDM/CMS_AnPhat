@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@//27.118.26.11/dbanphat</property>
+        <property name="hibernate.connection.username">CMS_OWNER</property>
+        <property name="hibernate.connection.password">CMS_OWNER#2016</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+        <!--<property name="hibernate.default_schema">MKYONG</property>-->
+        <property name="show_sql">true</property>
+        <mapping class="com.cms.model.TermInformation"></mapping>
+    </session-factory>
+</hibernate-configuration>

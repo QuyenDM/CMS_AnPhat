@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+    id="WebApp_ID" version="3.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <!--comment khi build 64-->
+    <!--    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>securedapp</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>-->
+<!--    <servlet>
+        <servlet-name>Push UI</servlet-name>
+        <servlet-class>
+            com.vaadin.server.VaadinServlet</servlet-class>
+        <init-param>
+            <param-name>UI</param-name>
+            <param-value>com.cms.ui.MyUI</param-value>
+        </init-param>
+
+         Enable server push 
+        <init-param>
+            <param-name>pushmode</param-name>
+            <param-value>automatic</param-value>
+        </init-param>
+        <async-supported>true</async-supported>
+    </servlet>-->
+    <context-param>
+        <description>Vaadin production mode</description>
+        <param-name>productionMode</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>    
+    <error-page>
+        <error-code>500</error-code>
+        <location>/ErrorHandler</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/ErrorHandler</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/ErrorHandler</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/ErrorHandler</location>
+    </error-page>
+    <!--Cau hinh BIRT-->
+    <!--    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>            
+            classpath:spring-beans.xml
+        </param-value>
+    </context-param>-->
+    <!--    <listener>
+        <listener-class>
+            com.viettel.eafs.web.listener.ServletUtilListener
+        </listener-class>
+    </listener>-->
+    <!--    <listener>
+        <listener-class>
+            com.viettel.bi.plugin.birt.BIRTContextListener
+        </listener-class>
+    </listener>
+    <listener>
+        <listener-class>
+            com.viettel.bi.plugin.birt.BIRTSessionListener
+        </listener-class>
+    </listener>-->
+    <!--    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>-->
+    <!--    <listener>
+        <listener-class>
+            com.viettel.eafs.web.listener.EAFSListener
+        </listener-class>
+    </listener>-->
+</web-app>

@@ -1,0 +1,35 @@
+@import "addons.scss";
+@import "mytheme.scss";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in mytheme.scss */
+.mytheme {
+  @include addons;
+
+  // Include mytheme theme styles in your theme
+  @include mytheme;
+}
+.v-tree-checkboxed .v-tree-node-caption-unchecked div span {
+    background: url("../img/checkbox-unchecked.png") no-repeat;
+    background-size: 13px 13px;
+    background-position: 0px 7px;
+    padding-left: 24px;
+    font-size: 13px !important;
+    font-family: tahoma !important;
+    line-height: 20px;
+}
+
+
+
+.v-tree-checkboxed .v-tree-node-caption-checked div span {
+    background: url("../img/checkbox-checked.png") no-repeat;
+    background-position: 0px 7px;
+    background-size: 13px 13px;
+    padding-left: 24px;
+    color:green;
+    font-family: tahoma !important;
+    font-style: italic;
+    font-size: 13px !important;
+    line-height: 20px;
+}
+
