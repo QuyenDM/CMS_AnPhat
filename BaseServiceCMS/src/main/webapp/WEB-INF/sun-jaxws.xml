@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+  <endpoint implementation="com.cms.service.CustomerStatusServiceImpl" name="CustomerStatusServiceImplService" url-pattern="/CustomerStatusServiceImplService"/>
+  <endpoint implementation="com.cms.service.CustomerContactServiceImpl" name="CustomerContactServiceImplService" url-pattern="/CustomerContactServiceImplService"/>
+  <endpoint implementation="com.cms.service.RoleObjectsServiceImpl" name="RoleObjectsServiceImplService" url-pattern="/RoleObjectsServiceImplService"/>
+  <endpoint implementation="com.cms.service.ServicesServiceImpl" name="ServicesServiceImplService" url-pattern="/ServicesServiceImplService"/>
+  <endpoint implementation="com.cms.service.CustomerCareHistoryServiceImpl" name="CustomerCareHistoryServiceImplService" url-pattern="/CustomerCareHistoryServiceImplService"/>
+  <endpoint implementation="com.cms.service.ObjectsServiceImpl" name="ObjectsServiceImplService" url-pattern="/ObjectsServiceImplService"/>
+  <endpoint implementation="com.cms.service.TermInformationServiceImpl" name="TermInformationServiceImplService" url-pattern="/TermInformationServiceImplService"/>
+  <endpoint implementation="com.cms.service.DepartmentServiceImpl" name="DepartmentServiceImplService" url-pattern="/DepartmentServiceImplService"/>
+  <endpoint implementation="com.cms.service.RolesServiceImpl" name="RolesServiceImplService" url-pattern="/RolesServiceImplService"/>
+  <endpoint implementation="com.cms.service.CustomerServiceImpl" name="CustomerServiceImplService" url-pattern="/CustomerServiceImplService"/>
+  <endpoint implementation="com.cms.service.AppParamsServiceImpl" name="AppParamsServiceImplService" url-pattern="/AppParamsServiceImplService"/>
+  <endpoint implementation="com.cms.service.StaffServiceImpl" name="StaffServiceImplService" url-pattern="/StaffServiceImplService"/>
+  <endpoint implementation="com.cms.service.MapStaffRolesServiceImpl" name="MapStaffRolesServiceImplService" url-pattern="/MapStaffRolesServiceImplService"/>
+  <endpoint implementation="com.cms.service.CategoryListServiceImpl" name="CategoryListServiceImplService" url-pattern="/CategoryListServiceImplService"/>
+  <endpoint implementation="com.cms.service.TaxAuthorityServiceImpl" name="TaxAuthorityServiceImplService" url-pattern="/TaxAuthorityServiceImplService"/>
+  <endpoint implementation="com.cms.service.ContractTemplateListServiceImpl" name="ContractTemplateListServiceImplService" url-pattern="/ContractTemplateListServiceImplService"/>
+  <endpoint implementation="com.cms.service.StatisticStaffPointServiceImpl" name="StatisticStaffPointServiceImplService" url-pattern="/StatisticStaffPointServiceImplService"/>
+  <endpoint implementation="com.cms.service.PriceInfoServiceImpl" name="PriceInfoServiceImplService" url-pattern="/PriceInfoServiceImplService"/>
+</endpoints>

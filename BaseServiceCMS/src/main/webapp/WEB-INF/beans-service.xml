@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://cxf.apache.org/jaxws
+        http://cxf.apache.org/schemas/jaxws.xsd">
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+    <!--Danh muc tham so ung dung-->
+    <jaxws:endpoint id="appParamsService"
+                    implementor="com.cms.service.AppParamsServiceImpl"
+                    address="/AppParamsService">
+    </jaxws:endpoint>
+    <!--    <jaxws:endpoint id="mapStaffCustomerService"
+                    implementor="com.cms.service.MapStaffCustomerServiceImpl"
+                    address="/MapStaffCustomerService">
+    </jaxws:endpoint>-->
+    <jaxws:endpoint id="customerService"
+                    implementor="com.cms.service.CustomerServiceImpl"
+                    address="/CustomerService">
+    </jaxws:endpoint>
+    <!--Danh muc dich vu-->
+    <jaxws:endpoint id="servicesService"
+                    implementor="com.cms.service.ServicesServiceImpl"
+                    address="/ServicesService">
+    </jaxws:endpoint>
+    <!--Danh muc phong ban-->
+    <jaxws:endpoint id="departmentService"
+                    implementor="com.cms.service.DepartmentServiceImpl"
+                    address="/DepartmentService">
+    </jaxws:endpoint>
+    <!--Danh muc nhan vien-->
+    <jaxws:endpoint id="staffService"
+                    implementor="com.cms.service.StaffServiceImpl"
+                    address="/StaffService">
+    </jaxws:endpoint>
+    <!--Chuc nang-->
+    <jaxws:endpoint id="objectsService"
+                    implementor="com.cms.service.ObjectsServiceImpl"
+                    address="/ObjectsService">
+    </jaxws:endpoint>
+    <!--Vai tro-->
+    <jaxws:endpoint id="rolesService"
+                    implementor="com.cms.service.RolesServiceImpl"
+                    address="/RolesService">
+    </jaxws:endpoint>
+    <!--Vai tro - chuc nang-->
+    <jaxws:endpoint id="roleObjectsService"
+                    implementor="com.cms.service.RoleObjectsServiceImpl"
+                    address="/RoleObjectsService">
+    </jaxws:endpoint>
+    <!--Thong tin han-->
+    <jaxws:endpoint id="termInformationService"
+                    implementor="com.cms.service.TermInformationServiceImpl"
+                    address="/TermInformationService">
+    </jaxws:endpoint>
+    <!--Lien he - khach hang-->
+    <jaxws:endpoint id="customerContactService"
+                    implementor="com.cms.service.CustomerContactServiceImpl"
+                    address="/CustomerContactService">
+    </jaxws:endpoint>
+    <!--Cham soc khach hang-->
+    <jaxws:endpoint id="customerCareHistoryService"
+                    implementor="com.cms.service.CustomerCareHistoryServiceImpl"
+                    address="/CustomerCareHistoryService">
+    </jaxws:endpoint>
+    <!--Thong tin khach hang - dich vu - nhan vien - trang thai-->
+    <jaxws:endpoint id="customerStatusService"
+                    implementor="com.cms.service.CustomerStatusServiceImpl"
+                    address="/CustomerStatusService">
+    </jaxws:endpoint>
+    <!--Gan nhan vien vai tro-->
+    <jaxws:endpoint id="mapStaffRolesService"
+                    implementor="com.cms.service.MapStaffRolesServiceImpl"
+                    address="/MapStaffRolesService">
+    </jaxws:endpoint>
+    <!--Danh sach han-->
+    <jaxws:endpoint id="categoryListService"
+                    implementor="com.cms.service.CategoryListServiceImpl"
+                    address="/CategoryListService">
+    </jaxws:endpoint>
+    <jaxws:endpoint id="taxAuthorityService"
+                    implementor="com.cms.service.TaxAuthorityServiceImpl"
+                    address="/TaxAuthorityService">
+    </jaxws:endpoint>
+    <!--Danh muc bieu mau hop dong-->
+    <jaxws:endpoint id="contractTemplateList"
+                    implementor="com.cms.service.ContractTemplateListServiceImpl"
+                    address="/ContractTemplateListService">
+    </jaxws:endpoint>
+    <!--Thong ke nhan vien - diem-->
+    <jaxws:endpoint id="statisticStaffPoint"
+                    implementor="com.cms.service.StatisticStaffPointServiceImpl"
+                    address="/StatisticStaffPointService">
+    </jaxws:endpoint>
+    <!--Thong tin goi cuoc-->
+    <jaxws:endpoint id="priceInfo"
+                    implementor="com.cms.service.PriceInfoServiceImpl"
+                    address="/PriceInfoService">
+    </jaxws:endpoint>
+</beans>
