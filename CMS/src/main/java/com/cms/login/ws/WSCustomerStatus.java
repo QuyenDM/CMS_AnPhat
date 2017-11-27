@@ -1,11 +1,14 @@
 package com.cms.login.ws;
 
+import com.cms.dto.CustomerDTO;
 import com.cms.dto.CustomerStatusDTO;
 import com.cms.dto.StatisticsCategoryListDTO;
 import com.cms.dto.StatusQuantityDTO;
+import com.cms.service.CustomerServiceImpl;
 import com.cms.service.CustomerStatusServiceImpl;
 import com.cms.utils.BundleUtils;
 import com.vwf5.base.dto.ResultDTO;
+import com.vwf5.base.utils.ConditionBean;
 import java.util.List;
 
 /**
@@ -14,7 +17,7 @@ import java.util.List;
  * @since 7/30/2016 5:27 PM
  */
 public class WSCustomerStatus {
-    
+
     List<CustomerStatusDTO> lstCustomerStatusDTO;
     List<CustomerStatusDTO> lstCustomerStatusConditionBean;
 
@@ -29,6 +32,11 @@ public class WSCustomerStatus {
     public static List<CustomerStatusDTO> getListCustomerStatusDTO(CustomerStatusDTO customerStatusDTO, int rowStart, int maxRow, String sortType, String sortFieldList) throws Exception {
         CustomerStatusServiceImpl service = new CustomerStatusServiceImpl();
         return service.getListCustomerStatusDTO(customerStatusDTO, rowStart, maxRow, sortType, sortFieldList);
+    }
+
+    public static List<CustomerStatusDTO> getListCustomerByCondition(List<ConditionBean> lstCon, int rowStart, int maxRow, String sortType, String sortFieldList) {
+        CustomerStatusServiceImpl service = new CustomerStatusServiceImpl();
+        return service.getListCustomerStatusByCondition(lstCon, rowStart, maxRow, sortType, sortFieldList);
     }
 
     //Insert CustomerStatus
@@ -66,7 +74,7 @@ public class WSCustomerStatus {
         CustomerStatusServiceImpl service = new CustomerStatusServiceImpl();
         return service.insertOrUpdateListCustomerStatus(lstCustomerStatusDTO);
     }
-    
+
     //Thong ke danh sach goi
     public static List<StatisticsCategoryListDTO> getStatisticsCategoryListByStaff(
             String service,
@@ -77,12 +85,11 @@ public class WSCustomerStatus {
         CustomerStatusServiceImpl serviceImpl = new CustomerStatusServiceImpl();
         return serviceImpl.getStatisticsCategoryListByStaff(service, staffCode, categoryId, beginLastUpdated, endLastUpdated);
     }
-    
+
     //Thong ke trang thai - so luong
     public static List<StatusQuantityDTO> getStatusQuantity(String staffCode) {
         CustomerStatusServiceImpl serviceImpl = new CustomerStatusServiceImpl();
         return serviceImpl.getStatusQuantity(staffCode);
     }
-    
-    
+
 }
