@@ -249,7 +249,7 @@ public class TaxAuthorityDAO extends BaseFWDAOImpl<TaxAuthority, Long> {
         sqlQuery.append("                WHERE 1=1 ");
         if (!DataUtil.isStringNullOrEmpty(mineName)) {
             if (mineName.contains(",")) {
-                sqlQuery.append("            AND cs.mine_name IN (̣:mineName)  ");
+                sqlQuery.append("            AND cs.mine_name IN (:mineName)  ");
             } else {
                 sqlQuery.append("            AND cs.mine_name = :mineName  ");
             }
@@ -266,6 +266,7 @@ public class TaxAuthorityDAO extends BaseFWDAOImpl<TaxAuthority, Long> {
         sqlQuery.append("             ) ORDER BY maCqt");
         SQLQuery query;
         try {
+            System.out.println(sqlQuery.toString());
             query = getSession().createSQLQuery(sqlQuery.toString());
             //Thuc hien chuyen du lieu lay ve thanh thanh doi tuong            
             query.setResultTransformer(Transformers.aliasToBean(TaxAuthorityDTO.class));
