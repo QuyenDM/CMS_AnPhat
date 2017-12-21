@@ -229,7 +229,7 @@ public class ExportContractFromTaxCode extends CommonOnePanelUI implements Seria
                 CommonUtils.showMessageRequired("customer.taxCode");
                 txtTaxCode.focus();
             } else {
-                getCompany(taxCode);
+                getCompany(taxCode.trim());
             }
         });
         ShortcutUtils.setShortcutKey(btnGetThongTin);

@@ -40,6 +40,9 @@ public class DataUtil {
         return isStringNullOrEmpty(strNullOrZero) ? "" : strNullOrZero;
     }
 
+    public static String nvl(String strNullOrZero) {
+        return isStringNullOrEmpty(strNullOrZero) ? " " : strNullOrZero;
+    }
     public static String getDateNullOrZero(DateField date) {
         return isStringNullOrEmpty(date.getValue()) ? ""
                 : DateUtil.date2ddMMyyyyString(date.getValue());

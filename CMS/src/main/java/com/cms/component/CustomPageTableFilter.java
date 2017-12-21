@@ -26,7 +26,7 @@ import org.tepi.filtertable.paged.PagedFilterTableContainer;
 
 @SuppressWarnings("serial")
 public class CustomPageTableFilter<T extends Container.Indexed & Container.Filterable & Container.ItemSetChangeNotifier>
-        extends FilterTable {
+        extends FilterTable implements Serializable {
 
     public interface PageChangeListener extends Serializable {
 

@@ -29,6 +29,7 @@ import com.cms.login.ws.WSStaff;
 import com.cms.login.ws.WSTaxAuthority;
 import com.cms.ui.CommonButtonClickListener;
 import com.cms.ui.CommonTableFilterPanel;
+import com.cms.ui.CommonValueChangeListener;
 import com.cms.utils.BundleUtils;
 import com.cms.utils.ComboComponent;
 import com.cms.utils.CommonMessages;
@@ -58,6 +59,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javassist.ClassPool;
+import javassist.CtClass;
 import org.springframework.beans.NullValueInNestedPathException;
 import org.vaadin.addons.comboboxmultiselect.ComboBoxMultiselect;
 
@@ -128,6 +131,13 @@ public class MapStaffCustomerViewController implements Serializable {
      * Khoi tao cac thanh phan cua dialog
      */
     private void initComponents() {
+        ClassPool pool = ClassPool.getDefault();
+        try {
+            CtClass cc = pool.get("org.vaadin.addons.comboboxmultiselect.ComboBoxMultiselect");
+            cc.addInterface(pool.get("java.io.Serializable"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         getDatas();
         initSearchGrid();
         initTables();
@@ -545,16 +555,13 @@ public class MapStaffCustomerViewController implements Serializable {
 //                }
 //            }
 //        });
-        cbxServices.addValueChangeListener(new Property.ValueChangeListener() {
-            @Override
-            public void valueChange(Property.ValueChangeEvent event) {
-                getListCategoryFromService();
-                comboUtils.setValues(cbxMineName, lstCategoryList, Constants.CATEGORY_LIST.NAME, true);
-            }
+        cbxServices.addValueChangeListener((Property.ValueChangeEvent event) -> {
+            getListCategoryFromService();
+            comboUtils.setValues(cbxMineName, lstCategoryList, Constants.CATEGORY_LIST.NAME, true);
         });
-        addValueChangeListener(new Property.ValueChangeListener() {
+        addValueChangeListener(new CommonValueChangeListener() {
             @Override
-            public void valueChange(Property.ValueChangeEvent event) {
+            public void execute() {
                 if (isMineNameChanged) {
                     CategoryListDTO categoryListDTO = (CategoryListDTO) cbxMineName.getValue();
                     if (categoryListDTO != null) {
@@ -579,32 +586,26 @@ public class MapStaffCustomerViewController implements Serializable {
                 }
             }
         });
-        cboMultiCity.addValueChangeListener(new Property.ValueChangeListener() {
-            @Override
-            public void valueChange(Property.ValueChangeEvent event) {
-                if (isCityChanged) {
-                    CategoryListDTO categoryListDTO = (CategoryListDTO) cbxMineName.getValue();
-                    if (categoryListDTO != null) {
-                        getProviderFromCondition(categoryListDTO);
-                        setValueToMultiProvider(lstProvider);
-                    }
-                } else {
-                    isCityChanged = true;
+        cboMultiCity.addValueChangeListener((Property.ValueChangeEvent event) -> {
+            if (isCityChanged) {
+                CategoryListDTO categoryListDTO = (CategoryListDTO) cbxMineName.getValue();
+                if (categoryListDTO != null) {
+                    getProviderFromCondition(categoryListDTO);
+                    setValueToMultiProvider(lstProvider);
                 }
+            } else {
+                isCityChanged = true;
             }
         });
-        cboMultiProvider.addValueChangeListener(new Property.ValueChangeListener() {
-            @Override
-            public void valueChange(Property.ValueChangeEvent event) {
-                if (isProviderChanged) {
-                    CategoryListDTO categoryListDTO = (CategoryListDTO) cbxMineName.getValue();
-                    if (categoryListDTO != null) {
-                        getTaxAuthorityFromCondition(categoryListDTO);
-                        setValueToMultiTaxAuthority(lstTaxAuthority);
-                    }
-                } else {
-                    isProviderChanged = true;
+        cboMultiProvider.addValueChangeListener((Property.ValueChangeEvent event) -> {
+            if (isProviderChanged) {
+                CategoryListDTO categoryListDTO = (CategoryListDTO) cbxMineName.getValue();
+                if (categoryListDTO != null) {
+                    getTaxAuthorityFromCondition(categoryListDTO);
+                    setValueToMultiTaxAuthority(lstTaxAuthority);
                 }
+            } else {
+                isProviderChanged = true;
             }
         });
 
@@ -736,7 +737,7 @@ public class MapStaffCustomerViewController implements Serializable {
         }
     }
 
-    public void addValueChangeListener(Property.ValueChangeListener valueChangeListener) {
+    public void addValueChangeListener(CommonValueChangeListener valueChangeListener) {
         cbxMineName.addValueChangeListener(valueChangeListener);
         mapStaffCustomerView.getDfFromDateRegister().addValueChangeListener(valueChangeListener);
         mapStaffCustomerView.getDfToDateRegister().addValueChangeListener(valueChangeListener);

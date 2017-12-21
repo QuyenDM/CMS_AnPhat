@@ -1321,10 +1321,10 @@ public class DataUtil {
     }
 
     public static <T> List<String> getListValueFromList(final List<T> lst, String column) throws NoSuchMethodException, IllegalAccessException {
-        if (lst == null || lst.isEmpty()) {
+        if (lst == null || lst.isEmpty() || lst.get(0) == null) {
             return new ArrayList<>();
         }
-        List<String> lstReturn = new ArrayList<>();
+        List<String> lstReturn = new ArrayList<>();        
         Class<?> c = lst.get(0).getClass();
         Method mdGetValue = c.getMethod(DataUtil.getGetterOfColumn(column));
         for (Object item : lst) {

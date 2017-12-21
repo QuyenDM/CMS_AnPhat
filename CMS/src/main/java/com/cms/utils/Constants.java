@@ -1021,7 +1021,7 @@ public class Constants {
         public static final String DEPLOY_ADDRESS = "#diachigiaodich";
         public static final String TAX_DEPARTMENT = "#coquanquanlythue";
         
-        public static final String NGUOI_LIENHE = "#nguoilienhe";        
+        public static final String NGUOI_LIENHE = "#nguoilienhe";
         public static final String CHUCVU_NGUOI_LIENHE = "#chucvunguoilienhe";
         public static final String SDT_NGUOI_LIENHE = "#sodienthoailienhe";
         public static final String EMAIL_NGUOI_LIENHE = "#emaillienhe";
@@ -1037,8 +1037,8 @@ public class Constants {
         public static final String PROVIDER = "provider";
         public static final String HINHTHUC = "hinhthuc";
         public static final String GOICUOC = "goicuoc";
-        public static final String SOTIEN = "sotien";
-        public static final String CHIETKHAU = "chietkhau";
+        public static final String SOTIEN = "#sotien";
+        public static final String CHIETKHAU = "#chietkhau";
         public static final String FILE_NAME = "fileName";
         public static final String CONTRACT_TEMPLATE_CODE = "templateCode";
         public static final String CONTRACT_TEMPLATE_PATH = "templatePath";
